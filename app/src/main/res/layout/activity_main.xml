@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCelebrityList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/etFirstName"/>
+    <EditText
+        android:id="@+id/etFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        app:layout_constraintTop_toBottomOf="@+id/rvCelebrityList"
+        app:layout_constraintBottom_toTopOf="@+id/etLastName"/>
+    <EditText
+        android:id="@+id/etLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        app:layout_constraintTop_toBottomOf="@+id/etFirstName"
+        app:layout_constraintBottom_toTopOf="@+id/etBirthDate"/>
+    <EditText
+        android:id="@+id/etBirthDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Birth date"
+        app:layout_constraintTop_toBottomOf="@+id/etLastName"
+        app:layout_constraintBottom_toTopOf="@+id/etNetWorth"/>
+    <EditText
+        android:id="@+id/etNetWorth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Net work"
+        app:layout_constraintTop_toBottomOf="@+id/etBirthDate"
+        app:layout_constraintBottom_toTopOf="@+id/cbIsFavorite"/>
+    <CheckBox
+        android:id="@+id/cbIsFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Is Favorite"
+        app:layout_constraintTop_toBottomOf="@+id/etNetWorth"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddUpdateCelebrity"/>
+    <Button
+        android:id="@+id/btnAddUpdateCelebrity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add/Update Celebrity"
+        android:onClick="onClick"
+        app:layout_constraintTop_toBottomOf="@+id/cbIsFavorite"
+        app:layout_constraintBottom_toTopOf="@+id/btnRemoveCelebrity"/>
+    <Button
+        android:id="@+id/btnRemoveCelebrity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove Celebrity"
+        android:onClick="onClick"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddUpdateCelebrity"
+        app:layout_constraintBottom_toTopOf="@+id/btnSeeFavorites"/>
+    <Button
+        android:id="@+id/btnSeeFavorites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="See Favorites"
+        android:onClick="onClick"
+        app:layout_constraintTop_toBottomOf="@+id/btnRemoveCelebrity"
+        app:layout_constraintBottom_toTopOf="@+id/btnSeeAllCelebrities"/>
+    <Button
+        android:id="@+id/btnSeeAllCelebrities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="See All Celebrities"
+        android:onClick="onContentProviderAllCelebrities"
+        app:layout_constraintTop_toBottomOf="@+id/btnSeeFavorites"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
